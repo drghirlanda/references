@@ -1,0 +1,7 @@
+* Colgin, L. L., Five decades of hippocampal place cells and eeg rhythms in behaving rats, Journal of Neuroscience, (2020) :article: 
+
+See [[cite:&colgin2020five]]
+
+- Place cells also react to non-place stimuli like odors, sounds,
+  tastes, and even abstract features such as trial type (match or
+  nonmatch)

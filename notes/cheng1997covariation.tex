@@ -1,0 +1,114 @@
+% Created 2024-01-31 Wed 16:35
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\date{\today}
+\title{}
+\hypersetup{
+ pdfauthor={},
+ pdftitle={},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 29.1 (Org mode 9.6.17)}, 
+ pdflang={English}}
+\usepackage{changes}
+\begin{document}
+
+\tableofcontents
+
+\section{Zero-covariation cases}
+\label{sec:orgde51e43}
+
+\textbf{pp. 2--3}: Cheng discusses several examples of causal judgments when
+covariation between a cause and an effect is zero. What should one
+conclude if \(P(e|i) - P(e|\bar i)=0\)? There is a problem, for example,
+if another cause \(j\) is always present, because then one observes
+\(P(e|ji) - P(e|j\bar i)=0\) and cannot conclude that \(i\) is not causing
+\(e\) in the absence of tests with \(j\) alone.
+
+Empirically, people judge \(P(e|i)=P(e|\bar i)\simeq 1\) as \(i\) having
+uncertain causal status, while \(P(e|i)=P(e|\bar i)<1\) leads to
+judgments that \(i\) is not a cause of \(e\).
+
+Cheng also notes that inhibitory causes cannot be detected if the
+effect does not occur with some frequency in the absence of the cause
+(well known in associative learning for conditioned inhibition). In
+this case one has \(P(e|i)=P(e|\bar i)\simeq 0\).
+
+\textbf{p4} Aims to contrast PowerPC model and RW model / delta-rule.
+
+\textbf{p6} Mentions learned irrelevance but explanation is not super clear,
+ is it mentioned later?
+
+\section{Main-Effect Contrast and Generative Causal Power (p6 ff.)}
+\label{sec:org138f5ae}
+
+\begin{itemize}
+\item \(p_x\) is the Pr that \(x\) causes \(e\) when \(x\) is present
+(causal power of \(x\)).
+\item \(p_x\) is not the same as \(P(e|x)\) (Pr that \(e\) occurs when \(x\) is
+present).
+\item \(P(e|x)\) can be estimated from observations, while \(p_x\) must be
+estimated using observations and other assumptions.
+\item \(p_x = P(e|x)\) only when no other causes are present or exist.
+\item Let \(i\) be a candidate cause for which we want to estimate \(p_i\),
+and \(a\) all alternative causes.
+\end{itemize}
+
+In summary:
+\begin{itemize}
+\item when \(i\) occurs, it produces \(e\) with Pr \(p_i\).
+\item when \(a\) occurs, it produces \(e\) with Pr \(p_a\).
+\item nothing else influences \(e\).
+\item \(i\) and \(a\) influence \(e\) independently.
+\item causal powers \(p_i\) and \(p_a\) are independent of how often \(i\) and
+\(a\) occur. That is:
+\begin{displaymath}
+  P(e) = P(i)p_i + P(a)p_a - P(i)p_i\times P(a)p_a
+\end{displaymath}
+\item with \(P(i)=1\) and \(P(i)=0\) one gets \(P(e|i)-P(e|\bar
+  i)=(1-P(a|i)p_a)p_i+(P(a|i)-P(a|\bar i))p_a\)
+\item When \(i\) and \(a\) are independent, \(P(a|i)=P(a|\bar i)\) and we get
+\begin{equation}
+  \label{eq:pi}
+  p_i = \frac{ P(e|i) - P(e|\bar i) }{ 1 - P(a)p_a }
+\end{equation}
+\item Cheng points out that, although \(p_a\) is unobservable, the product
+\(P(a)p_a\) can be estimated from observations of when \(a\) occurs
+without \(i\). \textbf{This product looks the same as \(V_a\) in associative
+learning.}
+\item The formal statement of the previous point is \(P(a)p_a=P(e|\bar i)\),
+leading to
+\begin{equation}
+  \label{eq:pi}
+  p_i = \frac{ P(e|i) - P(e|\bar i) }{ 1 - P(e|\bar i) }
+\end{equation}
+\end{itemize}
+
+\section{Main-Effect Contrast and Preventive Causal Power}
+\label{sec:orgdda9ae0}
+
+\begin{itemize}
+\item Now \(p_i\) is the probability that \(i\) prevents \(e\).
+\item In this case \(e\) occurs if \(a\) causes it and \(i\) does \emph{not} prevent
+it:
+\begin{equation}
+  \label{eq:pipreventive}
+  P(e) = P(a) p_a ( 1 - P(i)p_i )
+\end{equation}
+\item When \(a\) and \(i\) are independent:
+\begin{equation}
+  p_i = \frac{ - (P(e|i) - P(e|\bar i)) }{ P(e|\bar i) }
+\end{equation}
+\end{itemize}
+\end{document}
